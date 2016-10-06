@@ -8,6 +8,12 @@
 
 #import "LunchBusinessController.h"
 
+@interface LunchBusinessController ()
+
+@property (nonatomic, strong) NSMutableArray *json;
+
+@end
+
 @implementation LunchBusinessController
 
 + (instancetype)sharedManager
@@ -32,11 +38,20 @@
 
 - (NSMutableArray *)buildDataModel
 {
-    NSError *error;
+    self.json = [[NSMutableArray alloc] init];
     NSString *url_string = [NSString stringWithFormat:@"http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/restaurants.json"];
-    NSData *jsonDataFromURL = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
-    NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:jsonDataFromURL options:kNilOptions error:&error];
-    return json;
+    NSURL *url = [NSURL URLWithString:url_string];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error)
+        {
+            NSData *jsonDataFromURL = [NSData dataWithData:data];
+            self.json = [NSJSONSerialization JSONObjectWithData:jsonDataFromURL options:kNilOptions error:&error];
+        }
+    }];
+    [task resume];
+    return self.json;
 }
 
 @end
