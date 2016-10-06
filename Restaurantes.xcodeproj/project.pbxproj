@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302CACFA1DA654F900EE0349 /* LunchBusinessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CACF91DA654F900EE0349 /* LunchBusinessController.m */; };
 		3033CE001DA554B500A6FAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033CDFF1DA554B500A6FAFA /* main.m */; };
 		3033CE031DA554B500A6FAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033CE021DA554B500A6FAFA /* AppDelegate.m */; };
 		3033CE061DA554B500A6FAFA /* LunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033CE051DA554B500A6FAFA /* LunchViewController.m */; };
@@ -33,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		302CACF81DA654F900EE0349 /* LunchBusinessController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchBusinessController.h; sourceTree = "<group>"; };
+		302CACF91DA654F900EE0349 /* LunchBusinessController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchBusinessController.m; sourceTree = "<group>"; };
+		302CACFE1DA667AE00EE0349 /* ILunchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILunchViewControllerDelegate.h; sourceTree = "<group>"; };
 		3033CDFB1DA554B400A6FAFA /* Restaurantes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurantes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3033CDFF1DA554B500A6FAFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3033CE011DA554B500A6FAFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302CACF71DA654A400EE0349 /* BusinessControllers */ = {
+			isa = PBXGroup;
+			children = (
+				302CACF81DA654F900EE0349 /* LunchBusinessController.h */,
+				302CACF91DA654F900EE0349 /* LunchBusinessController.m */,
+			);
+			name = BusinessControllers;
+			sourceTree = "<group>";
+		};
+		302CACFD1DA667A000EE0349 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				302CACFE1DA667AE00EE0349 /* ILunchViewControllerDelegate.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		3033CDF21DA554B400A6FAFA = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +114,7 @@
 		3033CDFD1DA554B500A6FAFA /* Restaurantes */ = {
 			isa = PBXGroup;
 			children = (
+				302CACF71DA654A400EE0349 /* BusinessControllers */,
 				309C31B21DA624AF006FDA05 /* Resources */,
 				309C31B11DA62492006FDA05 /* ViewControllers */,
 				3033CE011DA554B500A6FAFA /* AppDelegate.h */,
@@ -117,6 +139,7 @@
 		309C31B11DA62492006FDA05 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				302CACFD1DA667A000EE0349 /* Protocols */,
 				3033CE041DA554B500A6FAFA /* LunchViewController.h */,
 				3033CE051DA554B500A6FAFA /* LunchViewController.m */,
 				3033CE071DA554B500A6FAFA /* InternetsViewController.h */,
@@ -238,6 +261,7 @@
 			files = (
 				3033CE091DA554B500A6FAFA /* InternetsViewController.m in Sources */,
 				3033CE031DA554B500A6FAFA /* AppDelegate.m in Sources */,
+				302CACFA1DA654F900EE0349 /* LunchBusinessController.m in Sources */,
 				3033CE061DA554B500A6FAFA /* LunchViewController.m in Sources */,
 				3033CE001DA554B500A6FAFA /* main.m in Sources */,
 			);

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ILunchViewControllerDelegate;
+
 @interface LunchViewController : UIViewController
+
+@property (nonatomic, strong) id <ILunchViewControllerDelegate> lunchViewControllerDelegate;
 
 + (instancetype)sharedManager;
 
 @end
-

@@ -7,8 +7,13 @@
 //
 
 #import "LunchViewController.h"
+#import "ILunchViewControllerDelegate.h"
+#import "LunchBusinessController.h"
 
 @interface LunchViewController ()
+
+@property (nonatomic, strong) NSMutableArray *viewModel;
+@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -29,7 +34,7 @@
     self = [super init];
     if (self)
     {
-        
+        _viewModel = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -39,6 +44,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    LunchBusinessController *lunchBusiness = [LunchBusinessController sharedManager];
+    self.viewModel = [lunchBusiness buildDataModel];
 }
 
 - (void)didReceiveMemoryWarning
