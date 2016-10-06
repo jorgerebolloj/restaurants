@@ -10,6 +10,7 @@
 
 @interface InternetsViewController : UIViewController
 
++ (instancetype)sharedManager;
 
 @end
 

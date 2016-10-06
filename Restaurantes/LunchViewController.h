@@ -10,6 +10,7 @@
 
 @interface LunchViewController : UIViewController
 
++ (instancetype)sharedManager;
 
 @end
 

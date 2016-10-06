@@ -14,17 +14,37 @@
 
 @implementation LunchViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    UIColor *grayTabColor = [UIColor colorWithRed:37/255.0 green:37/255.0 blue:37/255.0 alpha:1];
-    self.navigationController.navigationBar.tintColor = grayTabColor;
++ (instancetype)sharedManager
+{
+    static id sharedInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[[self class] alloc] init];
+    });
+    return sharedInstance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        
+    }
+    return self;
+}
 
-- (void)didReceiveMemoryWarning {
+#pragma mark - UIViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
