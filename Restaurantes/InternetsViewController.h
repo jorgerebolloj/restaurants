@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  InternetsViewController.h
 //  Restaurantes
 //
 //  Created by Jorge Rebollo J on 05/10/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface InternetsViewController : UIViewController
 
 
 @end

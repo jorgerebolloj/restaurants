@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  LunchViewController.h
 //  Restaurantes
 //
 //  Created by Jorge Rebollo J on 05/10/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface LunchViewController : UIViewController
 
 
 @end

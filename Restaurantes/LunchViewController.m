@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  LunchViewController.m
 //  Restaurantes
 //
 //  Created by Jorge Rebollo J on 05/10/16.
 //  Copyright © 2016 RGStudio. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "LunchViewController.h"
 
-@interface FirstViewController ()
+@interface LunchViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation LunchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

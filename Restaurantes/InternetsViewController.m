@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  InternetsViewController.m
 //  Restaurantes
 //
 //  Created by Jorge Rebollo J on 05/10/16.
 //  Copyright © 2016 RGStudio. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "InternetsViewController.h"
 
-@interface SecondViewController ()
+@interface InternetsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation InternetsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
