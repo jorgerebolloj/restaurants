@@ -7,10 +7,13 @@
 //
 
 #import "LunchBusinessController.h"
+#import "ILunchBusinessControllerDelegate.h"
+#import "LunchViewController.h"
 
 @interface LunchBusinessController ()
 
-@property (nonatomic, strong) NSMutableArray *json;
+@property (nonatomic, strong) NSMutableDictionary *json;
+@property (nonatomic, strong) NSString *collectionViewIdentifier;
 
 @end
 
@@ -31,14 +34,14 @@
     self = [super init];
     if (self)
     {
-        
+        _json = [[NSMutableDictionary alloc] init];
+        _collectionViewIdentifier = [[NSString alloc] init];
     }
     return self;
 }
 
-- (NSMutableArray *)buildDataModel
+- (void)requestBuildDataModel
 {
-    self.json = [[NSMutableArray alloc] init];
     NSString *url_string = [NSString stringWithFormat:@"http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/restaurants.json"];
     NSURL *url = [NSURL URLWithString:url_string];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
@@ -48,10 +51,31 @@
         {
             NSData *jsonDataFromURL = [NSData dataWithData:data];
             self.json = [NSJSONSerialization JSONObjectWithData:jsonDataFromURL options:kNilOptions error:&error];
+            LunchViewController *lunchViewController = [LunchViewController sharedManager];
+            [lunchViewController setViewModelWithDataModel:self.json[@"restaurants"]];
         }
     }];
     [task resume];
-    return self.json;
+    
+    /*NSError *error;
+    NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
+    self.json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    LunchViewController *lunchViewController = [LunchViewController sharedManager];
+    [lunchViewController setViewModelWithDataModel:self.json[@"restaurants"]];*/
+    
+}
+
+- (NSString *)validateIdentifierToSetCollectionView
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        self.collectionViewIdentifier = @"customGridCollectionViewCell";
+    }
+    else
+    {
+        self.collectionViewIdentifier = @"customCollectionViewCell";
+    }
+    return self.collectionViewIdentifier;
 }
 
 @end

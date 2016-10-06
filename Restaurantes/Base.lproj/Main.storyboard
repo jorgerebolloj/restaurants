@@ -21,21 +21,16 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hno-b0-Kyw">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="00c-oK-A0M">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="375" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hgJ-Pa-pPl">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="CdX-kx-8jv"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="U4L-El-7Oe"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,7 +43,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hup-hb-ZiD"/>
                     <connections>
-                        <outlet property="collectionView" destination="hno-b0-Kyw" id="Akt-BC-qtd"/>
+                        <outlet property="collectionView" destination="hno-b0-Kyw" id="JI1-zs-bJE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -102,7 +97,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jme-uT-q0f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="lunch" image="tab_lunch.png" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pL2-uP-a2z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pL2-uP-a2z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,7 +118,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ow4-Jd-lac" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="internets" image="tab_internets" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AhH-uB-Lnl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AhH-uB-Lnl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ILunchViewControllerDelegate.h"
 
+@protocol ILunchBusinessControllerDelegate;
+
 @interface LunchBusinessController : NSObject <ILunchViewControllerDelegate>
+
+@property (nonatomic, strong) id <ILunchBusinessControllerDelegate> lunchBusinessControllerDelegate;
 
 + (instancetype)sharedManager;
 

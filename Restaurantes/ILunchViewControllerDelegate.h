@@ -10,6 +10,8 @@
 
 @protocol ILunchViewControllerDelegate <NSObject>
 
-- (NSMutableArray *)buildDataModel;
+- (void)requestBuildDataModel;
+
+- (NSString *)validateIdentifierToSetCollectionView;
 
 @end
