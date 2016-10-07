@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *restaurantName;
 @property (nonatomic, weak) IBOutlet UILabel *categoryType;
 @property (nonatomic, weak) IBOutlet UIImageView *restaurantImage;
+@property (nonatomic, weak) IBOutlet UIImageView *restaurantImageMask;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) NSMutableDictionary *customListModel;
 @property (nonatomic, strong) NSString *urlImageString;

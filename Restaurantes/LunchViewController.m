@@ -8,10 +8,12 @@
 
 #import "LunchViewController.h"
 #import "IModelBasedCell.h"
+#import "LunchDetailViewController.h"
 
 @interface LunchViewController ()
 
 @property (nonatomic, strong) NSMutableArray *viewModel;
+@property (nonatomic, strong) NSMutableDictionary *cellViewModel;
 
 @end
 
@@ -32,7 +34,8 @@
     self = [super init];
     if (self)
     {
-        _viewModel = [NSMutableArray array];
+        _viewModel = [[NSMutableArray alloc] init];
+        _cellViewModel = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -114,7 +117,16 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.cellViewModel = self.viewModel[indexPath.row];
+    [self performSegueWithIdentifier:@"detailLunch" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"detailLunch"]){
+        LunchDetailViewController *controller = (LunchDetailViewController *)segue.destinationViewController;
+        controller.detailViewModel = self.cellViewModel;
+    }
 }
 
 - (void)didReceiveMemoryWarning

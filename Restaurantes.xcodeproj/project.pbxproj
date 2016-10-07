@@ -31,6 +31,7 @@
 		309C31D01DA624FB006FDA05 /* tab_internets@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31C01DA624FB006FDA05 /* tab_internets@3x.png */; };
 		309C31D11DA624FB006FDA05 /* tab_lunch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31C11DA624FB006FDA05 /* tab_lunch@2x.png */; };
 		309C31D21DA624FB006FDA05 /* tab_lunch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31C21DA624FB006FDA05 /* tab_lunch@3x.png */; };
+		30AA3EBA1DA7CAB800E9286C /* LunchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AA3EB91DA7CAB800E9286C /* LunchDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		309C31C01DA624FB006FDA05 /* tab_internets@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_internets@3x.png"; path = "Resources/tab_internets@3x.png"; sourceTree = SOURCE_ROOT; };
 		309C31C11DA624FB006FDA05 /* tab_lunch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_lunch@2x.png"; path = "Resources/tab_lunch@2x.png"; sourceTree = SOURCE_ROOT; };
 		309C31C21DA624FB006FDA05 /* tab_lunch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_lunch@3x.png"; path = "Resources/tab_lunch@3x.png"; sourceTree = SOURCE_ROOT; };
+		30AA3EB81DA7CAB800E9286C /* LunchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchDetailViewController.h; sourceTree = "<group>"; };
+		30AA3EB91DA7CAB800E9286C /* LunchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,7 @@
 			children = (
 				302CAD0D1DA68A2000EE0349 /* Internets */,
 				302CAD0C1DA68A1000EE0349 /* Lunch */,
+				30AA3EB71DA7CA6D00E9286C /* LunchDetail */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +189,15 @@
 				309C31C21DA624FB006FDA05 /* tab_lunch@3x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		30AA3EB71DA7CA6D00E9286C /* LunchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				30AA3EB81DA7CAB800E9286C /* LunchDetailViewController.h */,
+				30AA3EB91DA7CAB800E9286C /* LunchDetailViewController.m */,
+			);
+			name = LunchDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +292,7 @@
 				3033CE031DA554B500A6FAFA /* AppDelegate.m in Sources */,
 				302CAD121DA68C4900EE0349 /* CustomCollectionViewCell.m in Sources */,
 				3033CE061DA554B500A6FAFA /* LunchViewController.m in Sources */,
+				30AA3EBA1DA7CAB800E9286C /* LunchDetailViewController.m in Sources */,
 				3033CE001DA554B500A6FAFA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
