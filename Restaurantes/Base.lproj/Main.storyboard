@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,32 +19,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hno-b0-Kyw">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mM2-tO-Bd2">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="00c-oK-A0M">
-                                    <size key="itemSize" width="375" height="180"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tmC-9t-0i4">
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCollectionViewCell" id="Qer-ov-c6S" customClass="CustomCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellGradientBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="p2n-QK-rVL"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq0-BO-pMw">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="oDY-3G-Uj0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orP-zY-xRm">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Cq0-BO-pMw" firstAttribute="top" secondItem="orP-zY-xRm" secondAttribute="bottom" constant="3" id="4Eo-SB-NNw"/>
+                                            <constraint firstItem="p2n-QK-rVL" firstAttribute="leading" secondItem="Qer-ov-c6S" secondAttribute="leading" id="6Ef-0H-OkU"/>
+                                            <constraint firstItem="orP-zY-xRm" firstAttribute="leading" secondItem="Cq0-BO-pMw" secondAttribute="leading" id="DuH-KU-B6Y"/>
+                                            <constraint firstItem="p2n-QK-rVL" firstAttribute="top" secondItem="Qer-ov-c6S" secondAttribute="top" id="Jag-YN-SGL"/>
+                                            <constraint firstItem="orP-zY-xRm" firstAttribute="trailing" secondItem="Cq0-BO-pMw" secondAttribute="trailing" id="VUt-jA-Of5"/>
+                                            <constraint firstItem="Cq0-BO-pMw" firstAttribute="leading" secondItem="Qer-ov-c6S" secondAttribute="leadingMargin" id="iaf-RG-Tgx"/>
+                                            <constraint firstAttribute="trailing" secondItem="p2n-QK-rVL" secondAttribute="trailing" id="lhu-Df-IL1"/>
+                                            <constraint firstItem="Cq0-BO-pMw" firstAttribute="bottom" secondItem="Qer-ov-c6S" secondAttribute="bottomMargin" id="pgz-Vy-DYj"/>
+                                            <constraint firstItem="Cq0-BO-pMw" firstAttribute="trailing" secondItem="Qer-ov-c6S" secondAttribute="trailingMargin" id="tI7-VF-S2b"/>
+                                            <constraint firstAttribute="bottom" secondItem="p2n-QK-rVL" secondAttribute="bottom" id="wDH-M3-l5F"/>
+                                        </constraints>
+                                        <size key="customSize" width="375" height="156"/>
+                                        <connections>
+                                            <outlet property="categoryType" destination="Cq0-BO-pMw" id="O3f-Wp-vq2"/>
+                                            <outlet property="restaurantImage" destination="p2n-QK-rVL" id="6h4-0y-1mP"/>
+                                            <outlet property="restaurantName" destination="orP-zY-xRm" id="9ZZ-vk-afO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="CdX-kx-8jv"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="U4L-El-7Oe"/>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="dMX-wW-j2M"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Hpj-11-4eW"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hno-b0-Kyw" secondAttribute="trailing" id="6Ul-HJ-ahe"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="hno-b0-Kyw" secondAttribute="bottom" id="MBG-Wu-ohW"/>
-                            <constraint firstItem="hno-b0-Kyw" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="t4u-ZF-8d9"/>
-                            <constraint firstItem="hno-b0-Kyw" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="xxm-Xg-yD3"/>
+                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="AZj-UM-Ybz"/>
+                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="DbL-WO-XDw"/>
+                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Z4p-An-wRo"/>
+                            <constraint firstAttribute="trailing" secondItem="mM2-tO-Bd2" secondAttribute="trailing" id="fFQ-Vp-hWr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hup-hb-ZiD"/>
                     <connections>
-                        <outlet property="collectionView" destination="hno-b0-Kyw" id="JI1-zs-bJE"/>
+                        <outlet property="collectionView" destination="mM2-tO-Bd2" id="d4C-gs-Y03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -135,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cellGradientBackground.png" width="320" height="116"/>
         <image name="tab_internets" width="18" height="22"/>
         <image name="tab_lunch.png" width="24" height="24"/>
     </resources>

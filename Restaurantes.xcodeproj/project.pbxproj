@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		302CACFA1DA654F900EE0349 /* LunchBusinessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CACF91DA654F900EE0349 /* LunchBusinessController.m */; };
 		302CAD121DA68C4900EE0349 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CAD101DA68C4900EE0349 /* CustomCollectionViewCell.m */; };
-		302CAD131DA68C4900EE0349 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302CAD111DA68C4900EE0349 /* CustomCollectionViewCell.xib */; };
-		302CAD171DA6916600EE0349 /* CustomGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CAD151DA6916600EE0349 /* CustomGridCollectionViewCell.m */; };
-		302CAD181DA6916600EE0349 /* CustomGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302CAD161DA6916600EE0349 /* CustomGridCollectionViewCell.xib */; };
-		302CAD1B1DA691A200EE0349 /* CustomGridCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CAD1A1DA691A200EE0349 /* CustomGridCollectionViewLayout.m */; };
-		302CAD1E1DA691C300EE0349 /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CAD1D1DA691C300EE0349 /* CustomCollectionViewLayout.m */; };
 		3033CE001DA554B500A6FAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033CDFF1DA554B500A6FAFA /* main.m */; };
 		3033CE031DA554B500A6FAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033CE021DA554B500A6FAFA /* AppDelegate.m */; };
 		3033CE061DA554B500A6FAFA /* LunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3033CE051DA554B500A6FAFA /* LunchViewController.m */; };
@@ -40,19 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		302CACF81DA654F900EE0349 /* LunchBusinessController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchBusinessController.h; sourceTree = "<group>"; };
-		302CACF91DA654F900EE0349 /* LunchBusinessController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchBusinessController.m; sourceTree = "<group>"; };
-		302CACFE1DA667AE00EE0349 /* ILunchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILunchViewControllerDelegate.h; sourceTree = "<group>"; };
 		302CAD0F1DA68C4900EE0349 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		302CAD101DA68C4900EE0349 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
-		302CAD111DA68C4900EE0349 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
-		302CAD141DA6916600EE0349 /* CustomGridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGridCollectionViewCell.h; sourceTree = "<group>"; };
-		302CAD151DA6916600EE0349 /* CustomGridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGridCollectionViewCell.m; sourceTree = "<group>"; };
-		302CAD161DA6916600EE0349 /* CustomGridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomGridCollectionViewCell.xib; sourceTree = "<group>"; };
-		302CAD191DA691A200EE0349 /* CustomGridCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGridCollectionViewLayout.h; sourceTree = "<group>"; };
-		302CAD1A1DA691A200EE0349 /* CustomGridCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGridCollectionViewLayout.m; sourceTree = "<group>"; };
-		302CAD1C1DA691C300EE0349 /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
-		302CAD1D1DA691C300EE0349 /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 		302CAD1F1DA6924500EE0349 /* IModelBasedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModelBasedCell.h; sourceTree = "<group>"; };
 		3033CDFB1DA554B400A6FAFA /* Restaurantes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurantes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3033CDFF1DA554B500A6FAFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,7 +49,6 @@
 		3033CE0D1DA554B500A6FAFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3033CE101DA554B500A6FAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3033CE121DA554B500A6FAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		303FEE751DA6D613007CBC79 /* ILunchBusinessControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILunchBusinessControllerDelegate.h; sourceTree = "<group>"; };
 		309C31B31DA624FB006FDA05 /* cellGradientBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cellGradientBackground@2x.png"; path = "Resources/cellGradientBackground@2x.png"; sourceTree = SOURCE_ROOT; };
 		309C31B41DA624FB006FDA05 /* cellGradientBackground@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cellGradientBackground@3x.png"; path = "Resources/cellGradientBackground@3x.png"; sourceTree = SOURCE_ROOT; };
 		309C31B51DA624FB006FDA05 /* ic_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_close@2x.png"; path = "Resources/ic_close@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -96,20 +78,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		302CACF71DA654A400EE0349 /* BusinessControllers */ = {
-			isa = PBXGroup;
-			children = (
-				303FEE741DA6D5A6007CBC79 /* Protocols */,
-				302CACF81DA654F900EE0349 /* LunchBusinessController.h */,
-				302CACF91DA654F900EE0349 /* LunchBusinessController.m */,
-			);
-			name = BusinessControllers;
-			sourceTree = "<group>";
-		};
 		302CACFD1DA667A000EE0349 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				302CACFE1DA667AE00EE0349 /* ILunchViewControllerDelegate.h */,
 				302CAD1F1DA6924500EE0349 /* IModelBasedCell.h */,
 			);
 			name = Protocols;
@@ -138,16 +109,8 @@
 		302CAD0E1DA68C0000EE0349 /* Artifacts */ = {
 			isa = PBXGroup;
 			children = (
-				302CAD141DA6916600EE0349 /* CustomGridCollectionViewCell.h */,
-				302CAD151DA6916600EE0349 /* CustomGridCollectionViewCell.m */,
-				302CAD161DA6916600EE0349 /* CustomGridCollectionViewCell.xib */,
-				302CAD191DA691A200EE0349 /* CustomGridCollectionViewLayout.h */,
-				302CAD1A1DA691A200EE0349 /* CustomGridCollectionViewLayout.m */,
 				302CAD0F1DA68C4900EE0349 /* CustomCollectionViewCell.h */,
 				302CAD101DA68C4900EE0349 /* CustomCollectionViewCell.m */,
-				302CAD111DA68C4900EE0349 /* CustomCollectionViewCell.xib */,
-				302CAD1C1DA691C300EE0349 /* CustomCollectionViewLayout.h */,
-				302CAD1D1DA691C300EE0349 /* CustomCollectionViewLayout.m */,
 			);
 			name = Artifacts;
 			sourceTree = "<group>";
@@ -171,7 +134,6 @@
 		3033CDFD1DA554B500A6FAFA /* Restaurantes */ = {
 			isa = PBXGroup;
 			children = (
-				302CACF71DA654A400EE0349 /* BusinessControllers */,
 				309C31B21DA624AF006FDA05 /* Resources */,
 				309C31B11DA62492006FDA05 /* ViewControllers */,
 				3033CE011DA554B500A6FAFA /* AppDelegate.h */,
@@ -191,14 +153,6 @@
 				3033CDFF1DA554B500A6FAFA /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		303FEE741DA6D5A6007CBC79 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				303FEE751DA6D613007CBC79 /* ILunchBusinessControllerDelegate.h */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 		309C31B11DA62492006FDA05 /* ViewControllers */ = {
@@ -295,10 +249,8 @@
 				309C31C71DA624FB006FDA05 /* ic_webBack@2x.png in Resources */,
 				309C31CE1DA624FB006FDA05 /* icon_map@3x.png in Resources */,
 				309C31C31DA624FB006FDA05 /* cellGradientBackground@2x.png in Resources */,
-				302CAD131DA68C4900EE0349 /* CustomCollectionViewCell.xib in Resources */,
 				309C31D21DA624FB006FDA05 /* tab_lunch@3x.png in Resources */,
 				309C31CF1DA624FB006FDA05 /* tab_internets@2x.png in Resources */,
-				302CAD181DA6916600EE0349 /* CustomGridCollectionViewCell.xib in Resources */,
 				309C31C81DA624FB006FDA05 /* ic_webBack@3x.png in Resources */,
 				309C31C51DA624FB006FDA05 /* ic_close@2x.png in Resources */,
 				3033CE111DA554B500A6FAFA /* LaunchScreen.storyboard in Resources */,
@@ -325,13 +277,9 @@
 			files = (
 				3033CE091DA554B500A6FAFA /* InternetsViewController.m in Sources */,
 				3033CE031DA554B500A6FAFA /* AppDelegate.m in Sources */,
-				302CAD1B1DA691A200EE0349 /* CustomGridCollectionViewLayout.m in Sources */,
-				302CAD1E1DA691C300EE0349 /* CustomCollectionViewLayout.m in Sources */,
-				302CACFA1DA654F900EE0349 /* LunchBusinessController.m in Sources */,
 				302CAD121DA68C4900EE0349 /* CustomCollectionViewCell.m in Sources */,
 				3033CE061DA554B500A6FAFA /* LunchViewController.m in Sources */,
 				3033CE001DA554B500A6FAFA /* main.m in Sources */,
-				302CAD171DA6916600EE0349 /* CustomGridCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

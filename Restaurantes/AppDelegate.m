@@ -16,6 +16,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *url_string = [NSString stringWithFormat:@"http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/restaurants.json"];
+    NSURL *url = [NSURL URLWithString:url_string];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        if (error)
+        {
+            NSString *errorReport = [NSString stringWithFormat:@"Domain: %@\nError Code: %ld\nDescription: %@\nReason: %@", error.domain, (long)error.code, [error localizedDescription], [error localizedFailureReason]];
+            NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"errors.txt"];
+            [errorReport writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        }
+        else
+        {
+            NSString *jsonString;
+            NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            if ([NSJSONSerialization isValidJSONObject:json])
+            {
+                NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&error];
+                if (data != nil && error == nil)
+                {
+                    jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                }
+            }
+            NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"data.json"];
+            [jsonString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        }
+    }];
+    [task resume];
     return YES;
 }
 

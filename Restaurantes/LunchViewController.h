@@ -7,14 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ILunchBusinessControllerDelegate.h"
 
-@protocol ILunchViewControllerDelegate;
+@interface LunchViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@interface LunchViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ILunchBusinessControllerDelegate>
-
-@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) id <ILunchViewControllerDelegate> lunchViewControllerDelegate;
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 + (instancetype)sharedManager;
 
