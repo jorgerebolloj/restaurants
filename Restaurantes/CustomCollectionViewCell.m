@@ -39,6 +39,8 @@
     [self reloadData];
 }
 
+#pragma mark - Asynchronous Set and Store Images
+
 - (void)setImage
 {
     [_activityIndicator startAnimating];
@@ -67,10 +69,17 @@
     });
 }
 
-- (void)reloadData
+- (UIImage *)searchCacheImage:(NSString *)path
 {
-    [self.restaurantName setText:[self.customListModel[@"name"] description]];
-    [self.categoryType setText:[self.customListModel [@"category"] description]];
+    UIImage *customImage = NULL;
+    NSString *imageName = [self extractImageName];
+    if ([imageName length] > 0)
+    {
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *imagePath = [NSString stringWithFormat:@"%@/%@%@", documentsPath, imageName, @".png"];
+        customImage = [UIImage imageWithContentsOfFile: imagePath];
+    }
+    return customImage;
 }
 
 -(void)storeImage:(UIImage *)image
@@ -84,11 +93,11 @@
         [imgData writeToFile:imagePath atomically:NO];
         if (![imgData writeToFile:imagePath atomically:NO])
         {
-            NSLog(@"Fallo al cachear la imagen");
+            NSLog(@"Failed to cache the image.");
         }
         else
         {
-            NSLog(@"La imagen ha sido cacheada. Path: %@",imagePath);
+            NSLog(@"The image has been stored in cache. Path: %@",imagePath);
         }
     }
 }
@@ -120,17 +129,10 @@
     return imageName;
 }
 
-- (UIImage *)searchCacheImage:(NSString *)path
+- (void)reloadData
 {
-    UIImage *customImage = NULL;
-    NSString *imageName = [self extractImageName];
-    if ([imageName length] > 0)
-    {
-        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        NSString *imagePath = [NSString stringWithFormat:@"%@/%@%@", documentsPath, imageName, @".png"];
-        customImage = [UIImage imageWithContentsOfFile: imagePath];
-    }
-    return customImage;
+    [self.restaurantName setText:[self.customListModel[@"name"] description]];
+    [self.categoryType setText:[self.customListModel [@"category"] description]];
 }
 
 @end

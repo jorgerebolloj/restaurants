@@ -6,9 +6,6 @@
 //  Copyright © 2016 RGStudio. All rights reserved.
 //
 
-#define METERS_MILE 1609.344
-#define METERS_FEET 3.28084
-
 #import "LunchDetailViewController.h"
 
 @interface LunchDetailViewController ()
@@ -50,12 +47,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Look and feel navigation bar
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont fontWithName:@"AvenirNext-DemiBold" size:17.0]}];
     self.navigationController.navigationBar.translucent = NO;
-    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_map.png"]]];
-    self.navigationItem.rightBarButtonItem = item;
-
+    
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
@@ -63,6 +60,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // Set Properties
     [self.detailRestaurantName setText:[self.detailViewModel[@"name"] description]];
     [self.detailCategoryType setText:[self.detailViewModel[@"category"] description]];
     NSMutableArray *address = self.detailViewModel[@"location"][@"formattedAddress"];
@@ -70,6 +68,7 @@
     [self.detailFormattedPhone setText:[self.detailViewModel[@"contact"][@"formattedPhone"] description]];
     [self.detailTwitter setText:[self.detailViewModel[@"contact"][@"twitter"] description]];
     
+    // Set Annotation
     CLLocationCoordinate2D annotationCoord;
     annotationCoord.latitude = [[self.detailViewModel[@"location"][@"lat"] description] intValue];
     annotationCoord.longitude = [[self.detailViewModel[@"location"][@"lng"] description] intValue];
@@ -83,6 +82,11 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
+}
+
+- (IBAction)showMap
+{
+    NSLog(@"Awsome!!!");
 }
 
 - (void)didReceiveMemoryWarning

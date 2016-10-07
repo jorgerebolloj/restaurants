@@ -31,6 +31,7 @@
 		309C31D01DA624FB006FDA05 /* tab_internets@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31C01DA624FB006FDA05 /* tab_internets@3x.png */; };
 		309C31D11DA624FB006FDA05 /* tab_lunch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31C11DA624FB006FDA05 /* tab_lunch@2x.png */; };
 		309C31D21DA624FB006FDA05 /* tab_lunch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31C21DA624FB006FDA05 /* tab_lunch@3x.png */; };
+		30A560241DA82B0300FEA543 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A560231DA82B0300FEA543 /* MapViewController.m */; };
 		30AA3EBA1DA7CAB800E9286C /* LunchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AA3EB91DA7CAB800E9286C /* LunchDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		309C31C11DA624FB006FDA05 /* tab_lunch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_lunch@2x.png"; path = "Resources/tab_lunch@2x.png"; sourceTree = SOURCE_ROOT; };
 		309C31C21DA624FB006FDA05 /* tab_lunch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_lunch@3x.png"; path = "Resources/tab_lunch@3x.png"; sourceTree = SOURCE_ROOT; };
 		30A560191DA8029E00FEA543 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		30A560221DA82B0300FEA543 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		30A560231DA82B0300FEA543 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		30AA3EB81DA7CAB800E9286C /* LunchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchDetailViewController.h; sourceTree = "<group>"; };
 		30AA3EB91DA7CAB800E9286C /* LunchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +169,7 @@
 				302CAD0D1DA68A2000EE0349 /* Internets */,
 				302CAD0C1DA68A1000EE0349 /* Lunch */,
 				30AA3EB71DA7CA6D00E9286C /* LunchDetail */,
+				30A560211DA82AB900FEA543 /* Map */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +203,15 @@
 				30A560191DA8029E00FEA543 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30A560211DA82AB900FEA543 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				30A560221DA82B0300FEA543 /* MapViewController.h */,
+				30A560231DA82B0300FEA543 /* MapViewController.m */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		30AA3EB71DA7CA6D00E9286C /* LunchDetail */ = {
@@ -304,6 +317,7 @@
 				3033CE061DA554B500A6FAFA /* LunchViewController.m in Sources */,
 				30AA3EBA1DA7CAB800E9286C /* LunchDetailViewController.m in Sources */,
 				3033CE001DA554B500A6FAFA /* main.m in Sources */,
+				30A560241DA82B0300FEA543 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

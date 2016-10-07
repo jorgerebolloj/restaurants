@@ -60,21 +60,21 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="d2I-Us-EcH" firstAttribute="top" secondItem="Qer-ov-c6S" secondAttribute="top" id="1WM-T3-iFf"/>
+                                            <constraint firstItem="d2I-Us-EcH" firstAttribute="bottom" secondItem="p2n-QK-rVL" secondAttribute="bottom" id="09J-qm-uel"/>
                                             <constraint firstItem="Cq0-BO-pMw" firstAttribute="top" secondItem="orP-zY-xRm" secondAttribute="bottom" constant="3" id="4Eo-SB-NNw"/>
                                             <constraint firstItem="Qf1-ys-OF4" firstAttribute="centerY" secondItem="Qer-ov-c6S" secondAttribute="centerY" id="5q8-4r-h6p"/>
                                             <constraint firstItem="p2n-QK-rVL" firstAttribute="leading" secondItem="Qer-ov-c6S" secondAttribute="leading" id="6Ef-0H-OkU"/>
+                                            <constraint firstItem="d2I-Us-EcH" firstAttribute="top" secondItem="p2n-QK-rVL" secondAttribute="top" id="6jX-UK-gHN"/>
+                                            <constraint firstItem="d2I-Us-EcH" firstAttribute="trailing" secondItem="p2n-QK-rVL" secondAttribute="trailing" id="7s4-yZ-5CR"/>
                                             <constraint firstItem="orP-zY-xRm" firstAttribute="leading" secondItem="Cq0-BO-pMw" secondAttribute="leading" id="DuH-KU-B6Y"/>
-                                            <constraint firstAttribute="bottom" secondItem="d2I-Us-EcH" secondAttribute="bottom" id="Fem-cB-Ukc"/>
                                             <constraint firstItem="p2n-QK-rVL" firstAttribute="top" secondItem="Qer-ov-c6S" secondAttribute="top" id="Jag-YN-SGL"/>
+                                            <constraint firstItem="d2I-Us-EcH" firstAttribute="leading" secondItem="p2n-QK-rVL" secondAttribute="leading" id="P1h-62-ymR"/>
                                             <constraint firstItem="orP-zY-xRm" firstAttribute="trailing" secondItem="Cq0-BO-pMw" secondAttribute="trailing" id="VUt-jA-Of5"/>
                                             <constraint firstItem="Cq0-BO-pMw" firstAttribute="leading" secondItem="Qer-ov-c6S" secondAttribute="leadingMargin" id="iaf-RG-Tgx"/>
                                             <constraint firstAttribute="trailing" secondItem="p2n-QK-rVL" secondAttribute="trailing" id="lhu-Df-IL1"/>
                                             <constraint firstItem="Cq0-BO-pMw" firstAttribute="bottom" secondItem="Qer-ov-c6S" secondAttribute="bottomMargin" id="pgz-Vy-DYj"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="d2I-Us-EcH" secondAttribute="bottom" constant="-32" id="qAb-q9-WfJ"/>
                                             <constraint firstItem="Cq0-BO-pMw" firstAttribute="trailing" secondItem="Qer-ov-c6S" secondAttribute="trailingMargin" id="tI7-VF-S2b"/>
-                                            <constraint firstAttribute="trailing" secondItem="d2I-Us-EcH" secondAttribute="trailing" id="vPN-Ga-RGN"/>
-                                            <constraint firstAttribute="bottom" secondItem="p2n-QK-rVL" secondAttribute="bottom" id="wDH-M3-l5F"/>
-                                            <constraint firstItem="d2I-Us-EcH" firstAttribute="leading" secondItem="Qer-ov-c6S" secondAttribute="leading" id="wsZ-xi-uHZ"/>
                                             <constraint firstItem="Qf1-ys-OF4" firstAttribute="centerX" secondItem="Qer-ov-c6S" secondAttribute="centerX" id="xOs-Ib-95l"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="156"/>
@@ -101,7 +101,14 @@
                             <constraint firstItem="mM2-tO-Bd2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="xD6-Fe-BU9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hup-hb-ZiD"/>
+                    <navigationItem key="navigationItem" id="hup-hb-ZiD">
+                        <barButtonItem key="rightBarButtonItem" image="icon_map.png" id="Dkj-r4-Q0i">
+                            <connections>
+                                <action selector="showMap" destination="9pv-A4-QxB" id="1fX-nR-Rmm"/>
+                                <segue destination="o51-rn-F1c" kind="presentation" identifier="showMap" id="JGS-Qz-vBO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="mM2-tO-Bd2" id="d4C-gs-Y03"/>
                         <segue destination="KXA-n4-Qsd" kind="show" identifier="detailLunch" id="jiG-gC-39P"/>
@@ -202,7 +209,14 @@
                             <constraint firstItem="IRf-Rv-7A9" firstAttribute="leading" secondItem="Zsa-t9-bOV" secondAttribute="leading" constant="12" id="iia-Sy-1Rc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lunchy Time" id="ltF-pv-ZwQ"/>
+                    <navigationItem key="navigationItem" title="Lunchy Time" id="ltF-pv-ZwQ">
+                        <barButtonItem key="rightBarButtonItem" image="icon_map.png" id="wuS-HN-Xgf">
+                            <connections>
+                                <action selector="showMap" destination="KXA-n4-Qsd" id="vgm-cE-OQb"/>
+                                <segue destination="o51-rn-F1c" kind="presentation" id="JM1-CO-1oh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailCategoryType" destination="N0y-fP-RZH" id="Gz6-Ll-9Hf"/>
                         <outlet property="detailFormattedAddress" destination="cUk-Jy-OTS" id="gAg-rA-IIf"/>
@@ -299,10 +313,66 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="C6h-A5-ff4">
+            <objects>
+                <viewController id="vV0-4F-vib" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yu8-xW-idP"/>
+                        <viewControllerLayoutGuide type="bottom" id="HIx-be-mx9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eQM-9X-coI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-HL-iz9">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QjI-Ra-oe0">
+                        <barButtonItem key="rightBarButtonItem" image="ic_close.png" id="hjd-mN-Mha">
+                            <connections>
+                                <action selector="closeMap" destination="vV0-4F-vib" id="OBD-xq-E0A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jz8-EP-xOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3544.8000000000002" y="-999.85007496251887"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pYk-Zm-Q0W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o51-rn-F1c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Os5-e4-Pfs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.26274509800000001" green="0.90980392160000001" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vV0-4F-vib" kind="relationship" relationship="rootViewController" id="h3I-5Q-w1K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFZ-aS-yWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605.5999999999999" y="-999.85007496251887"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cellGradientBackground.png" width="320" height="116"/>
+        <image name="ic_close.png" width="19" height="18"/>
+        <image name="icon_map.png" width="30" height="30"/>
         <image name="tab_internets" width="18" height="22"/>
         <image name="tab_lunch.png" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JM1-CO-1oh"/>
+    </inferredMetricsTieBreakers>
 </document>
