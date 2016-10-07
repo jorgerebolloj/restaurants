@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lunchy Time-->
+        <!--Lunch View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="LunchViewController" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCollectionViewCell" id="Qer-ov-c6S" customClass="CustomCollectionViewCell">
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCollectionViewCell" id="Qer-ov-c6S" customClass="CustomCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -101,10 +101,10 @@
                             <constraint firstItem="mM2-tO-Bd2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="xD6-Fe-BU9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lunchy Time" id="hup-hb-ZiD"/>
+                    <navigationItem key="navigationItem" id="hup-hb-ZiD"/>
                     <connections>
                         <outlet property="collectionView" destination="mM2-tO-Bd2" id="d4C-gs-Y03"/>
-                        <segue destination="KXA-n4-Qsd" kind="push" identifier="detailLunch" id="jiG-gC-39P"/>
+                        <segue destination="KXA-n4-Qsd" kind="show" identifier="detailLunch" id="jiG-gC-39P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

@@ -57,6 +57,18 @@
     self.viewModel = jsonInfo[@"restaurants"];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.title = @"Lunchy Time";
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationItem.title = @"";
+    [super viewWillDisappear:animated];
+}
+
 #pragma mark : Collection View Datasource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -64,7 +76,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     NSUInteger row = (NSUInteger) indexPath.row;
     UICollectionViewCell <IModelBasedCell> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"customCollectionViewCell" forIndexPath:indexPath];
     
@@ -75,9 +87,8 @@
         [cell setCellWithModel:cellViewModel];
     }
     UICollectionViewCell *cellView = cell;
-    cellView.backgroundColor = [UIColor clearColor];
-    cellView.backgroundView = [[UIImageView alloc] init];
-    cellView.selectedBackgroundView = [[UIImageView alloc] init];
+    cellView.layer.shouldRasterize = YES;
+    cellView.layer.rasterizationScale = [UIScreen mainScreen].scale;
     return cellView;;
 }
 
@@ -132,7 +143,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -81,6 +81,7 @@
         NSData *imgData = UIImagePNGRepresentation(image);
         NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSString *imagePath = [NSString stringWithFormat:@"%@/%@%@", documentsPath, imageName, @".png"];
+        [imgData writeToFile:imagePath atomically:NO];
         if (![imgData writeToFile:imagePath atomically:NO])
         {
             NSLog(@"Fallo al cachear la imagen");
@@ -96,9 +97,9 @@
 {
     NSString *imageName = @"";
     NSArray *lines = [_urlImageString componentsSeparatedByString: @"/"];
-    if ([lines count] == 3)
+    if ([lines count] == 6)
     {
-        imageName = lines[2];
+        imageName = lines[5];
         if ([imageName rangeOfString:@"png"].location != NSNotFound ||
             [imageName rangeOfString:@"jpg"].location != NSNotFound ||
             [imageName rangeOfString:@"jpeg"].location != NSNotFound)

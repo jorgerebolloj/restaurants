@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		302CAD0F1DA68C4900EE0349 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
-		302CAD101DA68C4900EE0349 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		302CAD101DA68C4900EE0349 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 		302CAD1F1DA6924500EE0349 /* IModelBasedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModelBasedCell.h; sourceTree = "<group>"; };
 		3033CDFB1DA554B400A6FAFA /* Restaurantes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurantes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3033CDFF1DA554B500A6FAFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,6 +66,7 @@
 		309C31C01DA624FB006FDA05 /* tab_internets@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_internets@3x.png"; path = "Resources/tab_internets@3x.png"; sourceTree = SOURCE_ROOT; };
 		309C31C11DA624FB006FDA05 /* tab_lunch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_lunch@2x.png"; path = "Resources/tab_lunch@2x.png"; sourceTree = SOURCE_ROOT; };
 		309C31C21DA624FB006FDA05 /* tab_lunch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_lunch@3x.png"; path = "Resources/tab_lunch@3x.png"; sourceTree = SOURCE_ROOT; };
+		30A560191DA8029E00FEA543 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		30AA3EB81DA7CAB800E9286C /* LunchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchDetailViewController.h; sourceTree = "<group>"; };
 		30AA3EB91DA7CAB800E9286C /* LunchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +124,7 @@
 			children = (
 				3033CDFD1DA554B500A6FAFA /* Restaurantes */,
 				3033CDFC1DA554B400A6FAFA /* Products */,
+				30A560181DA8029E00FEA543 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +191,14 @@
 				309C31C21DA624FB006FDA05 /* tab_lunch@3x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		30A560181DA8029E00FEA543 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30A560191DA8029E00FEA543 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		30AA3EB71DA7CA6D00E9286C /* LunchDetail */ = {

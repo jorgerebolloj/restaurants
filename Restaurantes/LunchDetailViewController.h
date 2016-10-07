@@ -8,14 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface LunchDetailViewController : UIViewController <MKMapViewDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *detailViewModel;
-
-- (IBAction)zoomIn:(id)sender;
-
-- (IBAction)changeMapType:(id)sender;
 
 + (instancetype)sharedManager;
 

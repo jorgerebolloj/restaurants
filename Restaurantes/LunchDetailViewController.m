@@ -6,10 +6,14 @@
 //  Copyright © 2016 RGStudio. All rights reserved.
 //
 
+#define METERS_MILE 1609.344
+#define METERS_FEET 3.28084
+
 #import "LunchDetailViewController.h"
 
 @interface LunchDetailViewController ()
 
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) IBOutlet UILabel *detailRestaurantName;
 @property (nonatomic, weak) IBOutlet UILabel *detailCategoryType;
@@ -52,44 +56,33 @@
     UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_map.png"]]];
     self.navigationItem.rightBarButtonItem = item;
 
-    _mapView.delegate = self;
-    _mapView.showsUserLocation = YES;
+    self.mapView.delegate = self;
+    self.mapView.mapType = MKMapTypeStandard;
+    self.mapView.showsUserLocation = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.detailRestaurantName setText:[self.detailViewModel[@"name"] description]];
     [self.detailCategoryType setText:[self.detailViewModel[@"category"] description]];
-    NSMutableArray *address = self.detailViewModel[@"location"][@"formattedAddress"] ;
+    NSMutableArray *address = self.detailViewModel[@"location"][@"formattedAddress"];
     [self.detailFormattedAddress setText:[NSString stringWithFormat:@"%@\n%@\n%@", address[0], address[1], address[2]]];
     [self.detailFormattedPhone setText:[self.detailViewModel[@"contact"][@"formattedPhone"] description]];
     [self.detailTwitter setText:[self.detailViewModel[@"contact"][@"twitter"] description]];
-}
-
-- (IBAction)zoomIn:(id)sender
-{
-    MKUserLocation *userLocation = _mapView.userLocation;
-    MKCoordinateRegion region =
-    MKCoordinateRegionMakeWithDistance (userLocation.location.coordinate, 20000, 20000);
-    [_mapView setRegion:region animated:NO];
-}
-
-- (IBAction)changeMapType:(id)sender
-{
-    if (_mapView.mapType == MKMapTypeStandard)
-    {
-        _mapView.mapType = MKMapTypeSatellite;
-    }
-    else
-    {
-        _mapView.mapType = MKMapTypeStandard;
-    }
+    
+    CLLocationCoordinate2D annotationCoord;
+    annotationCoord.latitude = [[self.detailViewModel[@"location"][@"lat"] description] intValue];
+    annotationCoord.longitude = [[self.detailViewModel[@"location"][@"lng"] description] intValue];
+    MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+    annotationPoint.coordinate = annotationCoord;
+    annotationPoint.title = [self.detailViewModel[@"name"] description];
+    annotationPoint.subtitle = [self.detailViewModel[@"category"] description];
+    [self.mapView addAnnotation:annotationPoint];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    _mapView.centerCoordinate =
-    userLocation.location.coordinate;
+    [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
