@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *restaurantName;
 @property (nonatomic, weak) IBOutlet UILabel *categoryType;
 @property (nonatomic, weak) IBOutlet UIImageView *restaurantImage;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) NSMutableDictionary *customListModel;
 @property (nonatomic, strong) NSString *urlImageString;
 
@@ -39,6 +40,7 @@
 
 - (void)setImage
 {
+    [_activityIndicator startAnimating];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _urlImageString = [self.customListModel[@"backgroundImageURL"] description];
         UIImage *image = [self searchCacheImage:_urlImageString];
@@ -47,6 +49,8 @@
             NSURL *imageURL = [NSURL URLWithString:_urlImageString];
             NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
             dispatch_sync(dispatch_get_main_queue(), ^{
+                [_activityIndicator stopAnimating];
+                [_activityIndicator setHidden:YES];
                 self.restaurantImage.image = [UIImage imageWithData:imageData];
                 [self storeImage:[UIImage imageWithData:imageData]];
             });
@@ -54,6 +58,8 @@
         else
         {
             dispatch_sync(dispatch_get_main_queue(), ^{
+                [_activityIndicator stopAnimating];
+                [_activityIndicator setHidden:YES];
                 self.restaurantImage.image = image;
             });
         }

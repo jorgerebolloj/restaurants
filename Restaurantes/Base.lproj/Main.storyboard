@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lunch View Controller-->
+        <!--Lunchy Time-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="LunchViewController" sceneMemberID="viewController">
@@ -50,10 +50,17 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Qf1-ys-OF4">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="JmD-Yx-KGB"/>
+                                                        <constraint firstAttribute="width" constant="20" id="xv1-gc-rEX"/>
+                                                    </constraints>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Cq0-BO-pMw" firstAttribute="top" secondItem="orP-zY-xRm" secondAttribute="bottom" constant="3" id="4Eo-SB-NNw"/>
+                                            <constraint firstItem="Qf1-ys-OF4" firstAttribute="centerY" secondItem="Qer-ov-c6S" secondAttribute="centerY" id="5q8-4r-h6p"/>
                                             <constraint firstItem="p2n-QK-rVL" firstAttribute="leading" secondItem="Qer-ov-c6S" secondAttribute="leading" id="6Ef-0H-OkU"/>
                                             <constraint firstItem="orP-zY-xRm" firstAttribute="leading" secondItem="Cq0-BO-pMw" secondAttribute="leading" id="DuH-KU-B6Y"/>
                                             <constraint firstItem="p2n-QK-rVL" firstAttribute="top" secondItem="Qer-ov-c6S" secondAttribute="top" id="Jag-YN-SGL"/>
@@ -63,9 +70,11 @@
                                             <constraint firstItem="Cq0-BO-pMw" firstAttribute="bottom" secondItem="Qer-ov-c6S" secondAttribute="bottomMargin" id="pgz-Vy-DYj"/>
                                             <constraint firstItem="Cq0-BO-pMw" firstAttribute="trailing" secondItem="Qer-ov-c6S" secondAttribute="trailingMargin" id="tI7-VF-S2b"/>
                                             <constraint firstAttribute="bottom" secondItem="p2n-QK-rVL" secondAttribute="bottom" id="wDH-M3-l5F"/>
+                                            <constraint firstItem="Qf1-ys-OF4" firstAttribute="centerX" secondItem="Qer-ov-c6S" secondAttribute="centerX" id="xOs-Ib-95l"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="156"/>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="Qf1-ys-OF4" id="oMA-xX-mgI"/>
                                             <outlet property="categoryType" destination="Cq0-BO-pMw" id="O3f-Wp-vq2"/>
                                             <outlet property="restaurantImage" destination="p2n-QK-rVL" id="6h4-0y-1mP"/>
                                             <outlet property="restaurantName" destination="orP-zY-xRm" id="9ZZ-vk-afO"/>
@@ -80,13 +89,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="AZj-UM-Ybz"/>
-                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="DbL-WO-XDw"/>
-                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Z4p-An-wRo"/>
-                            <constraint firstAttribute="trailing" secondItem="mM2-tO-Bd2" secondAttribute="trailing" id="fFQ-Vp-hWr"/>
+                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="17k-eI-MU3"/>
+                            <constraint firstAttribute="trailing" secondItem="mM2-tO-Bd2" secondAttribute="trailing" id="A9n-2s-gMI"/>
+                            <constraint firstAttribute="bottom" secondItem="mM2-tO-Bd2" secondAttribute="bottom" id="FKB-Cu-qUH"/>
+                            <constraint firstItem="mM2-tO-Bd2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="xD6-Fe-BU9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hup-hb-ZiD"/>
+                    <navigationItem key="navigationItem" title="Lunchy Time" id="hup-hb-ZiD"/>
                     <connections>
                         <outlet property="collectionView" destination="mM2-tO-Bd2" id="d4C-gs-Y03"/>
                     </connections>
