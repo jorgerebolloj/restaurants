@@ -12,7 +12,8 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (nonatomic, strong) NSMutableDictionary *mapViewModel;
+@property (nonatomic, strong) NSMutableArray *mapsViewModel;
+@property (nonatomic, strong) NSMutableDictionary *singleMapViewModel;
 
 + (instancetype)sharedManager;
 

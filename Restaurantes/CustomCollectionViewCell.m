@@ -45,26 +45,30 @@
 {
     [_activityIndicator startAnimating];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        _urlImageString = [self.customListModel[@"backgroundImageURL"] description];
-        UIImage *image = [self searchCacheImage:_urlImageString];
-        if (image == NULL)
+        if (self.customListModel)
         {
-            NSURL *imageURL = [NSURL URLWithString:_urlImageString];
-            NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [_activityIndicator stopAnimating];
-                [_activityIndicator setHidden:YES];
-                self.restaurantImage.image = [UIImage imageWithData:imageData];
-                [self storeImage:[UIImage imageWithData:imageData]];
-            });
-        }
-        else
-        {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [_activityIndicator stopAnimating];
-                [_activityIndicator setHidden:YES];
-                self.restaurantImage.image = image;
-            });
+            _urlImageString = [self.customListModel[@"backgroundImageURL"] description];
+            UIImage *image = [self searchCacheImage:_urlImageString];
+            if (image == NULL)
+            {
+                NSURL *imageURL = [NSURL URLWithString:_urlImageString];
+                NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [_activityIndicator stopAnimating];
+                    [_activityIndicator setHidden:YES];
+                    self.restaurantImage.image = [UIImage imageWithData:imageData];
+                    [self storeImage:[UIImage imageWithData:imageData]];
+                });
+            }
+            else
+            {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [_activityIndicator stopAnimating];
+                    [_activityIndicator setHidden:YES];
+                    self.restaurantImage.image = image;
+                });
+            }
+
         }
     });
 }

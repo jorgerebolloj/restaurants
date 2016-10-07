@@ -30,6 +30,14 @@
             NSString *errorReport = [NSString stringWithFormat:@"Domain: %@\nError Code: %ld\nDescription: %@\nReason: %@", error.domain, (long)error.code, [error localizedDescription], [error localizedFailureReason]];
             NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"errors.txt"];
             [errorReport writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+            if (![errorReport writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil])
+            {
+                NSLog(@"Failed to cache the image.");
+            }
+            else
+            {
+                NSLog(@"The image has been stored in cache. Path: %@",filePath);
+            }
         }
         else
         {
@@ -46,6 +54,14 @@
             }
             NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"data.json"];
             [jsonString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+            if (![jsonString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil])
+            {
+                NSLog(@"Failed to cache the image.");
+            }
+            else
+            {
+                NSLog(@"The image has been stored in cache. Path: %@",filePath);
+            }
         }
     }];
     [task resume];

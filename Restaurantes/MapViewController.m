@@ -32,7 +32,8 @@
     self = [super init];
     if (self)
     {
-        _mapViewModel = [[NSMutableDictionary alloc] init];
+        _mapsViewModel = [[NSMutableArray alloc] init];
+        _singleMapViewModel = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -42,20 +43,69 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.generalMapView.delegate = self;
     self.generalMapView.mapType = MKMapTypeStandard;
     self.generalMapView.showsUserLocation = YES;
     
-    // Set Annotation
+    [self setAnnotationsGroup];
+    [self setAnnotation];
+}
+
+- (void)setAnnotationsGroup
+{
+    if (self.mapsViewModel)
+    {
+        NSMutableArray *annotationsGroup = [NSMutableArray array];
+        for (NSMutableDictionary* currentRestaurant in self.mapsViewModel)
+        {
+            CLLocationCoordinate2D annotationCoord;
+            annotationCoord.latitude = [[currentRestaurant[@"location"][@"lat"] description] intValue];
+            annotationCoord.longitude = [[currentRestaurant[@"location"][@"lng"] description] intValue];
+            MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+            annotationPoint.coordinate = annotationCoord;
+            annotationPoint.title = [currentRestaurant[@"name"] description];
+            annotationPoint.subtitle = [currentRestaurant[@"category"] description];
+            [annotationsGroup addObject:annotationPoint];
+        }
+        for (MKPointAnnotation *pointAnnotation in annotationsGroup)
+        {
+            [self.generalMapView addAnnotation:pointAnnotation];
+        }
+        [self setAdditinalLocationsToTest];
+    }
+}
+
+- (void)setAdditinalLocationsToTest
+{
     CLLocationCoordinate2D annotationCoord;
-    annotationCoord.latitude = [[self.mapViewModel[@"location"][@"lat"] description] intValue];
-    annotationCoord.longitude = [[self.mapViewModel[@"location"][@"lng"] description] intValue];
+    annotationCoord.latitude = 40.785091;
+    annotationCoord.longitude = -73.968285;
     MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
     annotationPoint.coordinate = annotationCoord;
-    annotationPoint.title = [self.mapViewModel[@"name"] description];
-    annotationPoint.subtitle = [self.mapViewModel[@"category"] description];
+    annotationPoint.title = @"Central Park";
+    annotationPoint.subtitle = @"New York, NY, USA";
     [self.generalMapView addAnnotation:annotationPoint];
+}
+
+- (void)setAnnotation
+{
+    if (self.singleMapViewModel)
+    {
+        CLLocationCoordinate2D annotationCoord;
+        annotationCoord.latitude = [[self.singleMapViewModel[@"location"][@"lat"] description] intValue];
+        annotationCoord.longitude = [[self.singleMapViewModel[@"location"][@"lng"] description] intValue];
+        MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+        annotationPoint.coordinate = annotationCoord;
+        annotationPoint.title = [self.singleMapViewModel[@"name"] description];
+        annotationPoint.subtitle = [self.singleMapViewModel[@"category"] description];
+        [self.generalMapView addAnnotation:annotationPoint];
+    }
+}
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    [self.generalMapView setCenterCoordinate:userLocation.coordinate animated:YES];
 }
 
 - (IBAction)closeMap
