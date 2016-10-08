@@ -10,6 +10,8 @@
 #import "IModelBasedCell.h"
 #import "LunchDetailViewController.h"
 #import "MapViewController.h"
+#import "ILunchViewControllerDelegate.h"
+#import "LunchViewBusinessController.h"
 
 @interface LunchViewController ()
 
@@ -52,9 +54,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (![self verifyIfExistStoredDataModel])
+    {
+        LunchViewBusinessController *lunchViewBusinessController = [[LunchViewBusinessController alloc] init];
+        [lunchViewBusinessController requestDataModelWithCompletionBlock:^(BOOL succeeded)
+         {
+             if (succeeded)
+             {
+                 //[self setDataModel];
+             }
+         }];
+    }
+    else
+    {
+        [self setDataModel];
+    }
     [self setLookAndFeelNavigationBar];
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+}
+
+- (BOOL)verifyIfExistStoredDataModel
+{
+    NSString* documentsPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString* jsonFile = [documentsPath stringByAppendingPathComponent:@"data.json"];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:jsonFile];
+    return fileExists;
 }
 
 - (void)setLookAndFeelNavigationBar
@@ -70,7 +95,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self setDataModel];
     
     // Look and feel navigation bar: so that the window title is not displayed on the back button
     self.navigationItem.title = @"Lunchy Time";
@@ -78,6 +102,7 @@
 
 - (void)setDataModel
 {
+    // Set view model from stored data model
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"data.json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
@@ -86,11 +111,6 @@
     {
         self.viewModel = jsonInfo[@"restaurants"];
     }
-    else
-    {
-        self.viewModel = [NSMutableArray array];
-    }
-    [self.collectionView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

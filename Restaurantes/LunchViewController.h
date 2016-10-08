@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ILunchViewControllerDelegate;
+
 @interface LunchViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) id <ILunchViewControllerDelegate> lunchViewControllerDelegate;
 
 + (instancetype)sharedManager;
 

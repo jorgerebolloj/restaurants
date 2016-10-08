@@ -89,8 +89,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="dMX-wW-j2M"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Hpj-11-4eW"/>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="Xjs-XR-epd"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="MRD-Uv-ooQ"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -110,7 +110,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="mM2-tO-Bd2" id="d4C-gs-Y03"/>
+                        <outlet property="collectionView" destination="mM2-tO-Bd2" id="pAN-dG-nBd"/>
                         <segue destination="KXA-n4-Qsd" kind="show" identifier="detailLunch" id="jiG-gC-39P"/>
                         <segue destination="vV0-4F-vib" kind="presentation" identifier="showMapFromList" id="Ruk-aO-llV"/>
                     </connections>
@@ -376,7 +376,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-HL-iz9"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-HL-iz9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1000" id="Fas-M8-2iO"/>
+                                    <constraint firstAttribute="height" constant="1000" id="gzr-SQ-dTQ"/>
+                                </constraints>
+                            </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXR-tV-Gs9">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1rw-Ab-ZEn"/>
@@ -398,11 +403,9 @@
                         <constraints>
                             <constraint firstItem="bXR-tV-Gs9" firstAttribute="top" secondItem="yu8-xW-idP" secondAttribute="bottom" constant="8" id="3Qf-wC-GoC"/>
                             <constraint firstAttribute="trailing" secondItem="bXR-tV-Gs9" secondAttribute="trailing" id="DaT-Ly-4p3"/>
-                            <constraint firstItem="HIx-be-mx9" firstAttribute="top" secondItem="WPa-HL-iz9" secondAttribute="bottom" id="NLd-L7-rjF"/>
-                            <constraint firstItem="WPa-HL-iz9" firstAttribute="top" secondItem="eQM-9X-coI" secondAttribute="top" id="XaT-rA-ykH"/>
+                            <constraint firstItem="WPa-HL-iz9" firstAttribute="top" secondItem="eQM-9X-coI" secondAttribute="top" id="VFZ-Nx-Nb2"/>
                             <constraint firstItem="bXR-tV-Gs9" firstAttribute="leading" secondItem="eQM-9X-coI" secondAttribute="leading" id="fJa-DN-xsL"/>
-                            <constraint firstItem="WPa-HL-iz9" firstAttribute="leading" secondItem="eQM-9X-coI" secondAttribute="leading" id="sF3-UH-7sh"/>
-                            <constraint firstAttribute="trailing" secondItem="WPa-HL-iz9" secondAttribute="trailing" id="wG6-zB-xs5"/>
+                            <constraint firstItem="WPa-HL-iz9" firstAttribute="leading" secondItem="bXR-tV-Gs9" secondAttribute="leading" id="qn4-mS-nkC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -425,6 +428,6 @@
         <image name="tab_lunch.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jsN-l5-D3V"/>
+        <segue reference="Ruk-aO-llV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -68,7 +68,6 @@
                     self.restaurantImage.image = image;
                 });
             }
-
         }
     });
 }
