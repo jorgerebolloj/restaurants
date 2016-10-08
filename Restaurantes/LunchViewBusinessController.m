@@ -10,7 +10,7 @@
 
 @implementation LunchViewBusinessController
 
-- (void)requestDataModelWitCompletionBlock:(void (^)(BOOL succeeded))completionBlock
+- (void)requestDataModelWithCompletionBlock:(void (^)(BOOL succeeded))completionBlock
 {
     // Asynchronous datamodel request
     NSString *url_string = [NSString stringWithFormat:@"http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/restaurants.json"];
