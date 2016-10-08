@@ -107,19 +107,15 @@
 
 - (void)setDataModel
 {
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        // Set view model from stored data model
-        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"data.json"];
-        NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
-        NSMutableDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-        if (jsonInfo)
-        {
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                self.viewModel = jsonInfo[@"restaurants"];
-            });
-        }
-    });
+    // Set view model from stored data model
+    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"data.json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
+    NSMutableDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    if (jsonInfo)
+    {
+         self.viewModel = jsonInfo[@"restaurants"];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
