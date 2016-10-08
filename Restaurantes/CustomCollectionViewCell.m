@@ -44,6 +44,7 @@
 - (void)setImage
 {
     [_activityIndicator startAnimating];
+    self.userInteractionEnabled = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if (self.customListModel)
         {
@@ -56,6 +57,7 @@
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [_activityIndicator stopAnimating];
                     [_activityIndicator setHidden:YES];
+                    self.userInteractionEnabled = YES;
                     self.restaurantImage.image = [UIImage imageWithData:imageData];
                     [self storeImage:[UIImage imageWithData:imageData]];
                 });
@@ -65,6 +67,7 @@
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     [_activityIndicator stopAnimating];
                     [_activityIndicator setHidden:YES];
+                    self.userInteractionEnabled = YES;
                     self.restaurantImage.image = image;
                 });
             }

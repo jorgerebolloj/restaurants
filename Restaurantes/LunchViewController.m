@@ -12,6 +12,7 @@
 #import "MapViewController.h"
 #import "ILunchViewControllerDelegate.h"
 #import "LunchViewBusinessController.h"
+#import "WelcomeViewController.h"
 
 @interface LunchViewController ()
 
@@ -56,12 +57,16 @@
     [super viewDidLoad];
     if (![self verifyIfExistStoredDataModel])
     {
+        [self performSegueWithIdentifier:@"welcome" sender:self];
         LunchViewBusinessController *lunchViewBusinessController = [[LunchViewBusinessController alloc] init];
         [lunchViewBusinessController requestDataModelWithCompletionBlock:^(BOOL succeeded)
          {
              if (succeeded)
              {
-                 //[self setDataModel];
+                 if ([self isViewLoaded])
+                 {
+                     self.view = nil;
+                 }
              }
          }];
     }
@@ -102,15 +107,19 @@
 
 - (void)setDataModel
 {
-    // Set view model from stored data model
-    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"data.json"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
-    NSMutableDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-    if (jsonInfo)
-    {
-        self.viewModel = jsonInfo[@"restaurants"];
-    }
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+        // Set view model from stored data model
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *filePath = [NSString stringWithFormat:@"%@/%@", documentsPath, @"data.json"];
+        NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
+        NSMutableDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        if (jsonInfo)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                self.viewModel = jsonInfo[@"restaurants"];
+            });
+        }
+    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated

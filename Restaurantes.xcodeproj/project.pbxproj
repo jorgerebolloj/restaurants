@@ -17,6 +17,8 @@
 		3033CE111DA554B500A6FAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3033CE0F1DA554B500A6FAFA /* LaunchScreen.storyboard */; };
 		306C3C2B1DA871F800101EAE /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 306C3C2A1DA871F800101EAE /* splash.png */; };
 		309873D11DA890E800364EC2 /* LunchViewBusinessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309873D01DA890E800364EC2 /* LunchViewBusinessController.m */; };
+		309873D61DA8AD7600364EC2 /* Restaurantes.png in Resources */ = {isa = PBXBuildFile; fileRef = 309873D51DA8AD7600364EC2 /* Restaurantes.png */; };
+		309873DA1DA8AE1E00364EC2 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309873D91DA8AE1E00364EC2 /* WelcomeViewController.m */; };
 		309C31C31DA624FB006FDA05 /* cellGradientBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31B31DA624FB006FDA05 /* cellGradientBackground@2x.png */; };
 		309C31C41DA624FB006FDA05 /* cellGradientBackground@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31B41DA624FB006FDA05 /* cellGradientBackground@3x.png */; };
 		309C31C51DA624FB006FDA05 /* ic_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309C31B51DA624FB006FDA05 /* ic_close@2x.png */; };
@@ -57,6 +59,9 @@
 		309873CF1DA890E800364EC2 /* LunchViewBusinessController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunchViewBusinessController.h; sourceTree = "<group>"; };
 		309873D01DA890E800364EC2 /* LunchViewBusinessController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunchViewBusinessController.m; sourceTree = "<group>"; };
 		309873D21DA8926300364EC2 /* ILunchViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILunchViewControllerDelegate.h; sourceTree = "<group>"; };
+		309873D51DA8AD7600364EC2 /* Restaurantes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Restaurantes.png; sourceTree = "<group>"; };
+		309873D81DA8AE1E00364EC2 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		309873D91DA8AE1E00364EC2 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		309C31B31DA624FB006FDA05 /* cellGradientBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cellGradientBackground@2x.png"; path = "Resources/cellGradientBackground@2x.png"; sourceTree = SOURCE_ROOT; };
 		309C31B41DA624FB006FDA05 /* cellGradientBackground@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cellGradientBackground@3x.png"; path = "Resources/cellGradientBackground@3x.png"; sourceTree = SOURCE_ROOT; };
 		309C31B51DA624FB006FDA05 /* ic_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_close@2x.png"; path = "Resources/ic_close@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -180,9 +185,19 @@
 			name = BusinessControllers;
 			sourceTree = "<group>";
 		};
+		309873D71DA8ADD400364EC2 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				309873D81DA8AE1E00364EC2 /* WelcomeViewController.h */,
+				309873D91DA8AE1E00364EC2 /* WelcomeViewController.m */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
 		309C31B11DA62492006FDA05 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				309873D71DA8ADD400364EC2 /* Welcome */,
 				302CAD0D1DA68A2000EE0349 /* Internets */,
 				302CAD0C1DA68A1000EE0349 /* Lunch */,
 				30AA3EB71DA7CA6D00E9286C /* LunchDetail */,
@@ -194,6 +209,7 @@
 		309C31B21DA624AF006FDA05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				309873D51DA8AD7600364EC2 /* Restaurantes.png */,
 				306C3C2A1DA871F800101EAE /* splash.png */,
 				309C31B31DA624FB006FDA05 /* cellGradientBackground@2x.png */,
 				309C31B41DA624FB006FDA05 /* cellGradientBackground@3x.png */,
@@ -318,6 +334,7 @@
 				309C31D11DA624FB006FDA05 /* tab_lunch@2x.png in Resources */,
 				309C31D01DA624FB006FDA05 /* tab_internets@3x.png in Resources */,
 				309C31CA1DA624FB006FDA05 /* ic_webForward@3x.png in Resources */,
+				309873D61DA8AD7600364EC2 /* Restaurantes.png in Resources */,
 				309C31CD1DA624FB006FDA05 /* icon_map@2x.png in Resources */,
 				309C31C91DA624FB006FDA05 /* ic_webForward@2x.png in Resources */,
 			);
@@ -332,6 +349,7 @@
 			files = (
 				3033CE091DA554B500A6FAFA /* InternetsViewController.m in Sources */,
 				3033CE031DA554B500A6FAFA /* AppDelegate.m in Sources */,
+				309873DA1DA8AE1E00364EC2 /* WelcomeViewController.m in Sources */,
 				302CAD121DA68C4900EE0349 /* CustomCollectionViewCell.m in Sources */,
 				3033CE061DA554B500A6FAFA /* LunchViewController.m in Sources */,
 				30AA3EBA1DA7CAB800E9286C /* LunchDetailViewController.m in Sources */,
