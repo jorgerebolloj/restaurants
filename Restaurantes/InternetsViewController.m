@@ -10,6 +10,12 @@
 
 @interface InternetsViewController ()
 
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *backWebButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *refreshWebButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *forwardWebButton;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *stopWebButton;
+
 @end
 
 @implementation InternetsViewController
@@ -39,8 +45,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadRequestFromString:@"http://www.bottlerocketstudios.com"];
 }
 
+#pragma mark - Web View
+
+- (void)loadRequestFromString:(NSString *)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:urlRequest];
+}
 
 - (void)didReceiveMemoryWarning
 {

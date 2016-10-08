@@ -262,13 +262,39 @@
                             <constraint firstAttribute="trailing" secondItem="OLg-PR-A7G" secondAttribute="trailing" id="lW3-lr-RqS"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="MMF-dy-UNN">
                         <leftBarButtonItems>
-                            <barButtonItem image="ic_webBack.png" id="PYI-AQ-1ch"/>
-                            <barButtonItem image="ic_webRefresh.png" id="uJ6-JR-chi"/>
-                            <barButtonItem image="ic_webForward.png" id="IrC-0D-oUk"/>
+                            <barButtonItem image="ic_webBack.png" id="PYI-AQ-1ch">
+                                <connections>
+                                    <action selector="goBack" destination="OLg-PR-A7G" id="ded-Kk-poM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="ic_webRefresh.png" id="uJ6-JR-chi">
+                                <connections>
+                                    <action selector="reload" destination="OLg-PR-A7G" id="0AI-cg-g4F"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="ic_webForward.png" id="IrC-0D-oUk">
+                                <connections>
+                                    <action selector="goForward" destination="OLg-PR-A7G" id="rWT-Ll-Enl"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="ic_close.png" id="6g5-lW-Vmb">
+                            <connections>
+                                <action selector="stopLoading" destination="OLg-PR-A7G" id="Q4i-8U-KQf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backWebButton" destination="PYI-AQ-1ch" id="Wl2-Dk-hOq"/>
+                        <outlet property="forwardWebButton" destination="IrC-0D-oUk" id="ZVJ-sp-aqg"/>
+                        <outlet property="refreshWebButton" destination="uJ6-JR-chi" id="RwD-XY-07H"/>
+                        <outlet property="stopWebButton" destination="6g5-lW-Vmb" id="DpK-DY-HrC"/>
+                        <outlet property="webView" destination="OLg-PR-A7G" id="pbw-Wd-xHs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

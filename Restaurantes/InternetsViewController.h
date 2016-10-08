@@ -12,4 +12,6 @@
 
 + (instancetype)sharedManager;
 
+- (void)loadRequestFromString:(NSString *)urlString;
+
 @end
